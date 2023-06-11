@@ -1736,9 +1736,9 @@ video {
   background-color: rgb(244 244 245 / var(--tw-bg-opacity));
 }
 
-.bg-zinc-700 {
+.bg-zinc-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(63 63 70 / var(--tw-bg-opacity));
+  background-color: rgb(212 212 216 / var(--tw-bg-opacity));
 }
 
 .decoration-slice {
@@ -2183,6 +2183,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-inner {
+  --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -2381,35 +2387,48 @@ video {
   width: 2.75rem;
 }
 
+.after\:rotate-0::after {
+  content: var(--tw-content);
+  --tw-rotate: 0deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@keyframes moonGrow {
+  0% {
+    content: var(--tw-content);
+    background-size: 30px 30px;
+  }
+
+  50% {
+    content: var(--tw-content);
+    background-size: 26px 26px;
+  }
+
+  100% {
+    content: var(--tw-content);
+    background-size: 30px 30px;
+  }
+}
+
+.after\:animate-moon::after {
+  content: var(--tw-content);
+  animation: moonGrow 0.2s linear 0.5s;
+}
+
 .after\:rounded-full::after {
   content: var(--tw-content);
   border-radius: 9999px;
 }
 
-.after\:bg-zinc-800::after {
+.after\:bg-zinc-100::after {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
-  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
-}
-
-.after\:bg-\[url\(\'\/images\/sun\.svg\'\)\]::after {
-  content: var(--tw-content);
-  background-image: url('/images/sun.svg');
+  background-color: rgb(244 244 245 / var(--tw-bg-opacity));
 }
 
 .after\:bg-\[url\(\'\/images\/moon\.svg\'\)\]::after {
   content: var(--tw-content);
   background-image: url('/images/moon.svg');
-}
-
-.after\:bg-cover::after {
-  content: var(--tw-content);
-  background-size: cover;
-}
-
-.after\:bg-\[length\:24px-24px\]::after {
-  content: var(--tw-content);
-  background-size: 24px-24px;
 }
 
 .after\:bg-\[length\:24px_24px\]::after {
@@ -2425,6 +2444,15 @@ video {
 .after\:bg-no-repeat::after {
   content: var(--tw-content);
   background-repeat: no-repeat;
+}
+
+.after\:transition::after {
+  content: var(--tw-content);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .after\:transition-all::after {
@@ -2471,14 +2499,15 @@ video {
   left: 2.75rem;
 }
 
+.peer:checked ~ .peer-checked\:after\:-rotate-180::after {
+  content: var(--tw-content);
+  --tw-rotate: -180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .peer:checked ~ .peer-checked\:after\:bg-\[url\(\'\/images\/sun\.svg\'\)\]::after {
   content: var(--tw-content);
   background-image: url('/images/sun.svg');
-}
-
-.peer:checked ~ .peer-checked\:after\:bg-\[length\:24px_24px\]::after {
-  content: var(--tw-content);
-  background-size: 24px 24px;
 }
 
 .peer:checked ~ .peer-checked\:after\:bg-\[length\:30px_30px\]::after {
@@ -2486,12 +2515,18 @@ video {
   background-size: 30px 30px;
 }
 
-.peer:checked ~ .peer-checked\:after\:bg-\[length\:28px_28px\]::after {
-  content: var(--tw-content);
-  background-size: 28px 28px;
+:is(.dark .dark\:bg-zinc-700) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 63 70 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:bg-zinc-800) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+}
+
+:is(.dark .dark\:after\:bg-zinc-800)::after {
+  content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }
