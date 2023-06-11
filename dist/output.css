@@ -2396,23 +2396,23 @@ video {
 @keyframes moonGrow {
   0% {
     content: var(--tw-content);
-    background-size: 30px 30px;
+    background-size: 24px 24px;
   }
 
   50% {
     content: var(--tw-content);
-    background-size: 26px 26px;
+    background-size: 20px 20px;
   }
 
   100% {
     content: var(--tw-content);
-    background-size: 30px 30px;
+    background-size: 24px 24px;
   }
 }
 
 .after\:animate-moon::after {
   content: var(--tw-content);
-  animation: moonGrow 0.2s linear 0.5s;
+  animation: moonGrow 0.2s linear 0.2s;
 }
 
 .after\:rounded-full::after {
@@ -2444,15 +2444,6 @@ video {
 .after\:bg-no-repeat::after {
   content: var(--tw-content);
   background-repeat: no-repeat;
-}
-
-.after\:transition::after {
-  content: var(--tw-content);
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
 }
 
 .after\:transition-all::after {
@@ -2503,6 +2494,28 @@ video {
   content: var(--tw-content);
   --tw-rotate: -180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@keyframes sunGrow {
+  0% {
+    content: var(--tw-content);
+    background-size: 30px 30px;
+  }
+
+  50% {
+    content: var(--tw-content);
+    background-size: 24px 24px;
+  }
+
+  100% {
+    content: var(--tw-content);
+    background-size: 30px 30px;
+  }
+}
+
+.peer:checked ~ .peer-checked\:after\:animate-sun::after {
+  content: var(--tw-content);
+  animation: sunGrow 0.2s linear 0.2s;
 }
 
 .peer:checked ~ .peer-checked\:after\:bg-\[url\(\'\/images\/sun\.svg\'\)\]::after {
