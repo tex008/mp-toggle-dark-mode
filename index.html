@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="/dist/output.css" />
     <title>Darkmode Toggle</title>
   </head>
-  <body class="flex items-center justify-center w-screen h-screen bg-zinc-800">
-    <label class="flex cursor-pointer">
-      <input type="checkbox" class="sr-only" />
+  <body class="flex justify-center w-screen h-screen bg-zinc-800">
+    <label class="flex items-center cursor-pointer">
+      <input type="checkbox" class="sr-only peer" />
       <div
-        class="w-24 h-12 rounded-full bg-zinc-700 after:content-[''] after:relative after:w-11 after:h-11 after:bg-red-300"
+        class="peer after:left-0 peer-checked:after:left-11 w-24 h-12 rounded-full bg-zinc-700 after:content-[''] px-1 items-center flex after:relative after:w-11 after:h-11 after:bg-zinc-800 after:flex after:rounded-full"
       ></div>
     </label>
   </body>

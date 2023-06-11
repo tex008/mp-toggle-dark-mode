@@ -1851,6 +1851,11 @@ video {
      object-fit: scale-down;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1986,11 +1991,6 @@ video {
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2351,6 +2351,16 @@ video {
   position: relative;
 }
 
+.after\:left-0::after {
+  content: var(--tw-content);
+  left: 0px;
+}
+
+.after\:flex::after {
+  content: var(--tw-content);
+  display: flex;
+}
+
 .after\:h-11::after {
   content: var(--tw-content);
   height: 2.75rem;
@@ -2361,10 +2371,15 @@ video {
   width: 2.75rem;
 }
 
-.after\:bg-red-300::after {
+.after\:rounded-full::after {
+  content: var(--tw-content);
+  border-radius: 9999px;
+}
+
+.after\:bg-zinc-800::after {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }
 
 .after\:content-\[\'\'\]::after {
@@ -2394,16 +2409,19 @@ video {
   text-align: center;
 }
 
+.peer:checked ~ .peer-checked\:after\:left-11::after {
+  content: var(--tw-content);
+  left: 2.75rem;
+}
+
 @media (min-width: 640px) {
   .sm\:underline {
     text-decoration-line: underline;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  @media (min-width: 1024px) {
-    .dark\:lg\:hover\:\[paint-order\:markers\]:hover {
-      paint-order: markers;
-    }
+@media (min-width: 1024px) {
+  :is(.dark .dark\:lg\:hover\:\[paint-order\:markers\]:hover) {
+    paint-order: markers;
   }
 }
