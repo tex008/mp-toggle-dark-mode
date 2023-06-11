@@ -1731,19 +1731,14 @@ video {
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-zinc-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(63 63 70 / var(--tw-bg-opacity));
-}
-
-.bg-zinc-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
-}
-
 .bg-zinc-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 245 / var(--tw-bg-opacity));
+}
+
+.bg-zinc-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 63 70 / var(--tw-bg-opacity));
 }
 
 .decoration-slice {
@@ -2298,6 +2293,16 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
@@ -2387,6 +2392,53 @@ video {
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }
 
+.after\:bg-\[url\(\'\/images\/sun\.svg\'\)\]::after {
+  content: var(--tw-content);
+  background-image: url('/images/sun.svg');
+}
+
+.after\:bg-\[url\(\'\/images\/moon\.svg\'\)\]::after {
+  content: var(--tw-content);
+  background-image: url('/images/moon.svg');
+}
+
+.after\:bg-cover::after {
+  content: var(--tw-content);
+  background-size: cover;
+}
+
+.after\:bg-\[length\:24px-24px\]::after {
+  content: var(--tw-content);
+  background-size: 24px-24px;
+}
+
+.after\:bg-\[length\:24px_24px\]::after {
+  content: var(--tw-content);
+  background-size: 24px 24px;
+}
+
+.after\:bg-center::after {
+  content: var(--tw-content);
+  background-position: center;
+}
+
+.after\:bg-no-repeat::after {
+  content: var(--tw-content);
+  background-repeat: no-repeat;
+}
+
+.after\:transition-all::after {
+  content: var(--tw-content);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.after\:duration-300::after {
+  content: var(--tw-content);
+  transition-duration: 300ms;
+}
+
 .after\:content-\[\'\'\]::after {
   --tw-content: '';
   content: var(--tw-content);
@@ -2417,6 +2469,26 @@ video {
 .peer:checked ~ .peer-checked\:after\:left-11::after {
   content: var(--tw-content);
   left: 2.75rem;
+}
+
+.peer:checked ~ .peer-checked\:after\:bg-\[url\(\'\/images\/sun\.svg\'\)\]::after {
+  content: var(--tw-content);
+  background-image: url('/images/sun.svg');
+}
+
+.peer:checked ~ .peer-checked\:after\:bg-\[length\:24px_24px\]::after {
+  content: var(--tw-content);
+  background-size: 24px 24px;
+}
+
+.peer:checked ~ .peer-checked\:after\:bg-\[length\:30px_30px\]::after {
+  content: var(--tw-content);
+  background-size: 30px 30px;
+}
+
+.peer:checked ~ .peer-checked\:after\:bg-\[length\:28px_28px\]::after {
+  content: var(--tw-content);
+  background-size: 28px 28px;
 }
 
 :is(.dark .dark\:bg-zinc-800) {
